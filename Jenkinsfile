@@ -18,7 +18,7 @@ node{
     sh "docker login -u nachikets01 -p ${DockerPass}"
     sh 'docker push nachikets01/insure-me:1.0'
     }
-    
+    }
     
     stage('deploy to test-environment') {
         ansiblePlaybook become: true, credentialsId: 'ansible-ssh-jenkins-key', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml'
