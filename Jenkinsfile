@@ -22,7 +22,7 @@ node{
     }
     
     stage('deploy to test-environment') {
-        ansiblePlaybook credentialsId: '9dcad404-c947-420c-b948-0685b6ece62f', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: 'configure-prod-server.yml', vaultTmpPath: ''
+        ansiblePlaybook credentialsId: '9dcad404-c947-420c-b948-0685b6ece62f', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: 'deploy-prod-server.yml', vaultTmpPath: ''
         
         
     }
