@@ -1,6 +1,4 @@
 node{
-
-    
     stage('code checkout'){
         git 'https://github.com/Nachiket-01/capstone-project-demo.git'
     }
