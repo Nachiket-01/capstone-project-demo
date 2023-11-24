@@ -22,7 +22,8 @@ node{
     }
     
     stage('deploy to test-environment') {
-        ansiblePlaybook disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml', vaultTmpPath: ''
+        ansiblePlaybook credentialsId: '9dcad404-c947-420c-b948-0685b6ece62f', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml', vaultTmpPath: ''
+        
         
     }
     
