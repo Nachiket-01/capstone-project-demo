@@ -1,0 +1,13 @@
+node{
+    stage('code checkout'){
+        git 'https://github.com/Nachiket-01/insurance-project.git'
+    }
+    stage('maven build'){
+        sh 'mvn clean package'
+    }
+    stage('Test Script '){
+        sh " java -jar /var/lib/jenkins/workspace/Testing-Automation/target/insure-me-jar-with-dependencies.jar"
+        //ansiblePlaybook credentialsId: '9dcad404-c947-420c-b948-0685b6ece62f', disableHostKeyChecking: true, inventory: '/etc/ansible/hosts', playbook: 'configure-test-server.yml', vaultTmpPath: ''
+        
+    }
+}
